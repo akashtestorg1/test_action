@@ -1,0 +1,11 @@
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Use Secret
+        run: echo "The secret value is: ${{ secrets.SECRET_NAME }}"
+        env:
+          MY_SECRET: ${{ secrets.SECRET_NAME }}
